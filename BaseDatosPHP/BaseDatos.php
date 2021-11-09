@@ -22,7 +22,7 @@
 
     <?php
 
-        require_once('BaseDatosphp.php');
+        require_once('GBDatos.php');
 
         if(isset($_POST['añadir'])){
             
