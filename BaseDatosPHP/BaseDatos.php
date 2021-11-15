@@ -13,7 +13,7 @@
         <input type="button" value="Mostrar listado" name="mostrar" onclick="location='BaseDatosphp.php'">
         <p>Nombre</p><input type="text" name="nombre" id="nombre">
         <p>Correo</p><input type="text" name="correo" id="correo">
-        <p>Contraseña</p><input type="text" name="contraseña" id="contraseña">
+        <p>Contraseña</p><input type="password" name="contraseña" id="contraseña">
         <p>Rol</p> <select name="rol" id="rol">
             <option value="admin">Administrador</option>
             <option value="cliente">Cliente</option>
@@ -22,11 +22,11 @@
 
     <?php
 
-        require_once('GBDatos.php');
+        require_once('Sesion.php');
 
         if(isset($_POST['añadir'])){
             
-            BD::IniciaConex();
+            Sesion::IniciaConex();
 
 
         }
