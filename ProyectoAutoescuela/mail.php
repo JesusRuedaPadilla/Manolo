@@ -22,7 +22,7 @@
     // adjuntos
     $mail->addAttachment("archivo que vamos a adjuntar junto con su extension (ej: hola.txt)");
    
-    // destinatario
+    // destinatarios
     $address = "correo del que lo recibe";
     $mail->AddAddress($address, "Test");
     // enviar
