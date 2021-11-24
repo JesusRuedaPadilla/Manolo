@@ -12,7 +12,7 @@
     // introducir usuario de google
     $mail->Username   = "jesus.rp163@gmail.com"; 
     // introducir clave
-    $mail->Password   = "goku9037";       
+    $mail->Password   = "contraseña correo";       
     $mail->SetFrom('jesus.rp163@gmail.com', 'Prueba imagenes correos');
     // asunto
     $mail->Subject    = "Jesus Rueda";
