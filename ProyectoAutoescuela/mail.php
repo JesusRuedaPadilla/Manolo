@@ -10,20 +10,20 @@
     $mail->Host       = "smtp.gmail.com";    
     $mail->Port       = 587;                 
     // introducir usuario de google
-    $mail->Username   = "jesus.rp163@gmail.com"; 
+    $mail->Username   = "correo del usuario que lo envia"; 
     // introducir clave
     $mail->Password   = "contraseña correo";       
-    $mail->SetFrom('jesus.rp163@gmail.com', 'Prueba imagenes correos');
+    $mail->SetFrom('correo usuario que lo envia', 'Prueba imagenes correos');
     // asunto
-    $mail->Subject    = "Jesus Rueda";
+    $mail->Subject    = "Nombre del correo ";
     // cuerpo
-    $mail->addEmbeddedImage("./imagenes/B8TZWKxCEAEJDOs.jpg","foto");
+    $mail->addEmbeddedImage("./imagenes/imagen que quieres subir.jpg","foto");
     $mail->MsgHTML('<h1>Imagenes y archivo</h1><br><img src="cid:foto">');
     // adjuntos
-    $mail->addAttachment("2DAW.pdf");
+    $mail->addAttachment("archivo que vamos a adjuntar junto con su extension (ej: hola.txt)");
    
     // destinatario
-    $address = "wwbhty@gmail.com";
+    $address = "correo del que lo recibe";
     $mail->AddAddress($address, "Test");
     // enviar
     $resul = $mail->Send();
