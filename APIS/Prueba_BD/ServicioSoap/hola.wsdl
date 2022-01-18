@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://localhost/Prueba_BD/ServicioSoap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="metodosBD" targetNamespace="http://localhost/Prueba_BD/ServicioSoap/">
+  <types>
+    <xsd:schema targetNamespace="http://localhost/Prueba_BD/ServicioSoap/">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+    </xsd:schema>
+  </types>
+  <portType name="metodosBDPort">
+    <operation name="obtieneUsuarios">
+      <input message="tns:obtieneUsuariosIn"/>
+      <output message="tns:obtieneUsuariosOut"/>
+    </operation>
+  </portType>
+  <binding name="metodosBDBinding" type="tns:metodosBDPort">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="obtieneUsuarios">
+      <soap:operation soapAction="http://localhost/Prueba_BD/ServicioSoap/#obtieneUsuarios"/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/Prueba_BD/ServicioSoap/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/Prueba_BD/ServicioSoap/"/>
+      </output>
+    </operation>
+  </binding>
+  <message name="obtieneUsuariosIn"/>
+  <message name="obtieneUsuariosOut">
+    <part name="return" type="soap-enc:Array"/>
+  </message>
+  <service name="metodosBDService">
+    <port name="metodosBDPort" binding="tns:metodosBDBinding">
+      <soap:address location="http://localhost/Prueba_BD/ServicioSoap/"/>
+    </port>
+  </service>
+</definitions>
